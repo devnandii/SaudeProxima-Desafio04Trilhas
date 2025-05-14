@@ -5,103 +5,56 @@
     <title>UBS Local - Encontre unidades de saúde próximas</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
-
 </head>
 <body>
-<div class="header">
-    <div class="logo">
-        <img src="logo.png" alt="UBS Local">
-    </div>
-    <nav class="menu">
-        <a href="#">Como funciona</a>
-        <a href="#">Tipos de unidades</a>
-        <a href="#">Contato</a>
-    </nav>
-</div>
+    <div id="header"></div>
 
-<div class="main-container">
-    <h1>Encontre unidades de saúde próximas a você</h1>
-    <p>Busque UBS de saúde por endereço ou sua localização atual</p>
-    <form>
-        <div class="form-group">
-            <label for="endereco">Digite seu endereço</label>
-            <input type="text" id="endereco" placeholder="Ex: Rua das Flores, 123 - Centro, São Paulo/SP">
-        </div>
-        <div class="form-group">
-            <label for="tipo">Tipo de estabelecimento</label>
-            <select id="tipo">
-                <option>Todos os tipos</option>
+    <div class="main-container">
+        <h1>Encontre unidades de saúde próximas a você</h1>
+        <p>Busque UBS de saúde por endereço ou sua localização atual</p>
+        <form>
+            <div class="form-group">
+                <label for="endereco">Digite seu endereço</label>
+                <input type="text" id="endereco" placeholder="Ex: Rua das Flores, 123 - Centro, São Paulo/SP">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de estabelecimento</label>
+                <select id="tipo">
+                    <option>Todos os tipos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="especialidade">Especialidade (opcional)</label>
+                <select id="especialidade">
+                    <option>Qualquer especialidade</option>
+                </select>
+            </div>
+            <button type="submit">Buscar unidades</button>
+        </form>
+    </div>
+
+    <div class="section-results">
+        <h2>Unidades de saúde próximas</h2>
+        <div class="order-by">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar">
+                <option>Mais próximo</option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="especialidade">Especialidade (opcional)</label>
-            <select id="especialidade">
-                <option>Qualquer especialidade</option>
-            </select>
+        <div class="results-container">
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
+            </div>
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
+            </div>
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
+            </div>
         </div>
-        <button type="submit">Buscar unidades</button>
-    </form>
-</div>
+    </div>
 
-<div class="section-results">
-    <h2>Unidades de saúde próximas</h2>
-    <div class="order-by">
-        <label for="ordenar">Ordenar por:</label>
-        <select id="ordenar">
-            <option>Mais próximo</option>
-        </select>
-    </div>
-    <div class="results-container">
-        <div class="result-card">
-            <div class="photo-placeholder">[Foto da unidade]</div>
-        </div>
-        <div class="result-card">
-            <div class="photo-placeholder">[Foto da unidade]</div>
-        </div>
-        <div class="result-card">
-            <div class="photo-placeholder">[Foto da unidade]</div>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Sobre</h4>
-            <ul>
-                <li><a href="#">Quem somos</a></li>
-                <li><a href="#">Como funciona</a></li>
-                <li><a href="#">Nossa missão</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Para unidades</h4>
-            <ul>
-                <li><a href="#">Cadastre sua unidade</a></li>
-                <li><a href="#">Atualizar informações</a></li>
-                <li><a href="#">Área administrativa</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Ajuda</h4>
-            <ul>
-                <li><a href="#">Perguntas frequentes</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Termos de uso</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Parceiros</h4>
-            <ul>
-                <li><a href="#">Ministério da Saúde</a></li>
-                <li><a href="#">Secretaria Municipais</a></li>
-                <li><a href="#">Hospitais privados</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">
-        © Desafio04 - Trilhas 2025
-    </div>
-</div>
+    <div id="footer"></div>
+    <script src="components/include-header-footer.js"></script>
 </body>
 </html>

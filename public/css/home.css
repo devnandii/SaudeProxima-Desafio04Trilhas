@@ -5,45 +5,6 @@ body {
     padding: 0;
 }
 
-.header {
-    background: #4b7358;
-    color: #fff;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-}
-
-.header .logo {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-}
-
-.header .logo img {
-    height: 45px;
-    margin-right: 10px;
-}
-
-.header .menu {
-    display: flex;
-    gap: 32px;
-    margin-right: 40px;
-}
-
-.header .menu a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: text-decoration 0.2s;
-}
-
-.header .menu a:hover {
-    text-decoration: underline;
-}
-
 .main-container {
     max-width: 700px;
     margin: 40px auto 0 auto;
@@ -157,58 +118,4 @@ button:hover {
     border-radius: 6px;
     border: 1px solid #b2c6b6;
     background: #f5f6f5;
-}
-
-.footer {
-    background: #4b7358;
-    color: #fff;
-    padding: 32px 0 16px 0;
-    margin-top: 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 180px;
-    margin: 0 24px;
-}
-
-.footer-section h4 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    text-align: center;
-    color: #d7e2db;
-    font-size: 13px;
-    margin-top: 24px;
 }
