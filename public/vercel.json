@@ -1,7 +1,9 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/busca.js" }
+    { "source": "/api/(.*)", "destination": "/api/busca.js" },
+    { "source": "/api/postos/(.*)", "destination": "/api/postos/unidades.js" },
+    { "source": "/api/geolocaliza/(.*)", "destination": "/api/geolocaliza/geolocaliza.js" }
   ],
   "headers": [
     {
