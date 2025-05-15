@@ -2,10 +2,13 @@ import { Pool } from 'pg';
 
 const pool = new Pool({
   connectionString: process.env.NEON_DATABASE_URL,
-  ssl: true
+  ssl: { rejectUnauthorized: false }
 });
 
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+
   try {
     const { rows } = await pool.query('SELECT id, nome FROM tipo_unidade ORDER BY nome');
     res.status(200).json(rows);
@@ -13,3 +16,4 @@ export default async function handler(req, res) {
     res.status(500).json({ erro: error.message });
   }
 }
+

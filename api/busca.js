@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 
 const pool = new Pool({
   connectionString: process.env.NEON_DATABASE_URL,
-  ssl: true
+  ssl: { rejectUnauthorized: false }
 });
 
 export default async (req, res) => {
@@ -36,20 +36,3 @@ export default async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-document.querySelector('form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const endereco = document.getElementById('endereco').value;
-  const tipoId = document.getElementById('tipo').value;
-  const especialidadeId = document.getElementById('especialidade').value;
-  
-  // Usar estes valores na sua API de busca
-  const queryParams = new URLSearchParams();
-  if (endereco) queryParams.append('endereco', endereco);
-  if (tipoId) queryParams.append('tipo', tipoId);
-  if (especialidadeId) queryParams.append('especialidade', especialidadeId);
-  
-  window.location.href = `/resultados.html?${queryParams.toString()}`;
-});
-
