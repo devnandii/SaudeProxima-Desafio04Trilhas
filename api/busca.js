@@ -1,36 +1,38 @@
 import { Pool } from 'pg';
 
-// Configuração do Neon.tech
 const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
-  ssl: { rejectUnauthorized: false }
+  connectionString: process.env.NEON_DATABASE_URL,
+  ssl: true
 });
 
 export default async (req, res) => {
-  const { endereco } = req.query;
-
+  const { lat, lng, raio = 5000 } = req.query;
+  
   try {
-    // 1. Geocodificação: Converter endereço em lat/long (ex: usar Google Maps API)
-    // (Para simplificar, vamos supor que você já tem as coordenadas)
-    const userLat = -12.1234;
-    const userLng = -38.5678;
-
-    // 2. Buscar unidades em um raio de 5 km
     const { rows } = await pool.query(`
       SELECT 
-        *,
-        ST_Distance(coordenadas, ST_GeogFromText('POINT(${userLng} ${userLat})')) AS distancia
-      FROM unidades
+        nome,
+        endereco,
+        horario_funcionamento,
+        telefone,
+        ST_X(coordenadas) as lng,
+        ST_Y(coordenadas) as lat,
+        ST_Distance(
+          coordenadas::GEOGRAPHY,
+          ST_MakePoint($1, $2)::GEOGRAPHY
+        ) as distancia
+      FROM unidades_saude
       WHERE ST_DWithin(
-        coordenadas,
-        ST_GeogFromText('POINT(${userLng} ${userLat})'),
-        5000 -- Raio em metros
+        coordenadas::GEOGRAPHY,
+        ST_MakePoint($1, $2)::GEOGRAPHY,
+        $3
       )
-      ORDER BY distancia;
-    `);
+      ORDER BY distancia
+      LIMIT 20
+    `, [lng, lat, raio]);
 
     res.status(200).json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Erro no servidor' });
+    res.status(500).json({ error: error.message });
   }
 };
