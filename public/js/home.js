@@ -1,54 +1,34 @@
-let map;
-let markers = [];
-
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-  map = new Map(document.getElementById("map"), {
-    center: { lat: -23.5505, lng: -46.6333 },
-    zoom: 12,
-    mapId: "DEMO_MAP_ID"
-  });
-}
-
-async function buscarUnidades() {
-  const endereco = document.getElementById('endereco').value;
-  
+// Função para carregar os tipos de estabelecimento e especialidades
+async function carregarDadosDosBancos() {
   try {
-    // Geocodificação
-    const { results: [geoData] } = await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(endereco)}&key=${process.env.GOOGLE_MAPS_API_KEY}`
-    ).then(res => res.json());
-
-    const { location } = geoData.geometry;
+    // Carregar tipos de estabelecimento
+    const resTipos = await fetch('/api/tipos');
+    if (!resTipos.ok) throw new Error('Erro ao carregar tipos');
+    const tipos = await resTipos.json();
     
-    // Busca unidades
-    const unidades = await fetch(`/api/busca?lat=${location.lat}&lng=${location.lng}`)
-      .then(res => res.json());
-
-    exibirResultados(unidades);
-    plotarMarcadores(unidades);
+    // Carregar especialidades
+    const resEspecialidades = await fetch('/api/especialidades');
+    if (!resEspecialidades.ok) throw new Error('Erro ao carregar especialidades');
+    const especialidades = await resEspecialidades.json();
     
-  } catch (error) {
-    console.error("Erro na busca:", error);
-  }
-}
-
-function plotarMarcadores(unidades) {
-  // Limpa marcadores anteriores
-  markers.forEach(marker => marker.setMap(null));
-  markers = [];
-
-  unidades.forEach(unidade => {
-    const marker = new google.maps.Marker({
-      position: { lat: unidade.lat, lng: unidade.lng },
-      map,
-      title: unidade.nome
+    // Popular select de tipos
+    const tipoSelect = document.getElementById('tipo');
+    tipoSelect.innerHTML = '<option value="">Todos os tipos</option>';
+    tipos.forEach(tipo => {
+      tipoSelect.innerHTML += `<option value="${tipo.id}">${tipo.nome}</option>`;
     });
     
-    markers.push(marker);
-  });
-
-  if (unidades.length > 0) {
-    map.setCenter(markers[0].getPosition());
+    // Popular select de especialidades
+    const especialidadeSelect = document.getElementById('especialidade');
+    especialidadeSelect.innerHTML = '<option value="">Qualquer especialidade</option>';
+    especialidades.forEach(esp => {
+      especialidadeSelect.innerHTML += `<option value="${esp.id}">${esp.nome}</option>`;
+    });
+    
+  } catch (error) {
+    console.error('Falha ao carregar dados:', error);
   }
 }
+
+// Carregar os dados quando a página for carregada
+document.addEventListener('DOMContentLoaded', carregarDadosDosBancos);
