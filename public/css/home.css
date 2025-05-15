@@ -1,0 +1,121 @@
+body {
+    background: #f5f6f5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px #0001;
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.main-container h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2e4633;
+    margin-bottom: 8px;
+}
+
+.main-container p {
+    font-size: 15px;
+    color: #4b7358;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b2c6b6;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 4px;
+    background: #f5f6f5;
+}
+
+button {
+    background: #4b7358;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #35543e;
+}
+
+.section-results {
+    background: #e2ede6;
+    padding: 36px 0 48px 0;
+    margin-top: 32px;
+}
+
+.section-results h2 {
+    color: #2e4633;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 12%;
+    margin-bottom: 24px;
+}
+
+.results-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 0 12%;
+}
+
+.result-card {
+    background: #f5f6f5;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px #0001;
+    width: 260px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 14px;
+}
+
+.result-card .photo-placeholder {
+    width: 100%;
+    height: 110px;
+    background: #b2c6b6;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+}
+
+.order-by {
+    float: right;
+    margin-right: 12%;
+    margin-top: -38px;
+}
+
+.order-by select {
+    padding: 6px 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #b2c6b6;
+    background: #f5f6f5;
+}

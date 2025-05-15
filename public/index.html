@@ -1,185 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaúdeProxima</title>
-    <link rel="stylesheet" href="style.css">
+    <title>UBS Local - Encontre unidades de saúde próximas</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
-    <header>
-        <div class="header_container">
-            <div class="logo">
-                <img src="" alt="Logo">
-                
+    <div id="header"></div>
+
+    <div class="main-container">
+        <h1>Encontre unidades de saúde próximas a você</h1>
+        <p>Busque UBS de saúde por endereço ou sua localização atual</p>
+        <form>
+            <div class="form-group">
+                <label for="endereco">Digite seu endereço</label>
+                <input type="text" id="endereco" placeholder="Ex:  ">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Como funciona</a></li>
-                    <li><a href="#">Tipos de unidades</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <section class="pesquisa">
-        <div class="pesquisa_container">
-            <h2>Encontre unidades de saúde próximas a você</h2>
-            <p>Busque hospitais, UBS, clínicas e outros estabelecimentos de saúde por endereço ou sua localização atual</p>
-            
-            <div class="pesquisa_box">
-                <form class="pesquisa_form">
-                    <div class="form_group">
-                        <label for="address">Digite seu endereço</label>
-                        <input type="text" id="address" placeholder="Ex: Rua das Flores, 123 - Centro, São Paulo/SP">
-                    </div>
-                    
-                    <div class="form_group">
-                        <label for="assistencia_tipo">Tipo de estabelecimento</label>
-                        <select id="assistencia_tipo">
-                            <option value="all">Todos os tipos</option>
-                            <option value="hospital">Hospital</option>
-                            <option value="ubs">UBS (Unidade Básica de Saúde)</option>
-                            <option value="clinica">Clínica Médica</option>
-                            <option value="farmacia">Farmácia</option>
-                            <option value="especialidade">Centro de Especialidades</option>
-                            <option value="emergencia">Pronto Socorro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form_group">
-                        <label for="especialidade">Especialidade (opcional)</label>
-                        <select id="especialidade">
-                            <option value="">Qualquer especialidade</option>
-                            <option value="cardiologia">Cardiologia</option>
-                            <option value="pediatria">Pediatria</option>
-                            <option value="ortopedia">Ortopedia</option>assistencia_tipo
-                            <option value="dentista">Odontologia</option>
-                            <option value="psicologia">Psicologia</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="search">Buscar unidades próximas</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    
-    <section class="resultado">
-        <div class="resultado_header">
-            <h3>Unidades de saúde próximas</h3>
-            <div class="filter">
-                <span>Ordenar por:</span>
-                <select>
-                    <option>Mais próximo</option>
-                    <option>Melhor avaliado</option>
-                    <option>Maior capacidade</option>
+            <div class="form-group">
+                <label for="tipo">Tipo de estabelecimento</label>
+                <select id="tipo">
+                    <option>Todos os tipos</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="especialidade">Especialidade (opcional)</label>
+                <select id="especialidade">
+                    <option>Qualquer especialidade</option>
+                </select>
+            </div>
+            <button type="submit">Buscar unidades</button>
+        </form>
+    </div>
+
+    <div class="section-results">
+        <h2>Unidades de saúde próximas</h2>
+        <div class="order-by">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar">
+                <option>Mais próximo</option>
+            </select>
         </div>
-        
-        <div class="resultado_list">
-            
-            <div class="resultado_card">
-                <div class="card-image">
-                    [Foto da unidade]
-                </div>
-                <div class="card-content">
-                    <h4>Hospital Municipal Santa Helena</h4>
-                    <span class="distance">1.2 km de distância</span>
-                    <p>Av. das Nações, 1000 - Centro, São Paulo/SP</p>
-                    <p><strong>Tipo:</strong> Hospital Geral</p>
-                    <p><strong>Atendimento:</strong> 24 horas</p>
-                    <div class="card-actions">
-                        <button class="action-button details-button">Ver detalhes</button>
-                        <button class="action-button directions-button">Como chegar</button>
-                    </div>
-                </div>
+        <div class="results-container">
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
             </div>
-            
-            
-            <div class="resultado_card">
-                <div class="card-image">
-                    [Foto da unidade]
-                </div>
-                <div class="card-content">
-                    <h4>UBS Jardim das Flores</h4>
-                    <span class="distance">2.5 km de distância</span>
-                    <p>Rua das Acácias, 250 - Jardim das Flores, São Paulo/SP</p>
-                    <p><strong>Tipo:</strong> UBS (Unidade Básica de Saúde)</p>
-                    <p><strong>Atendimento:</strong> Seg-Sex, 7h-19h</p>
-                    <div class="card-actions">
-                        <button class="action-button details-button">Ver detalhes</button>
-                        <button class="action-button directions-button">Como chegar</button>
-                    </div>
-                </div>
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
             </div>
-            
-            
-            <div class="resultado_card">
-                <div class="card-image">
-                    [Foto da unidade]
-                </div>
-                <div class="card-content">
-                    <h4>Clínica Médica Especializada</h4>
-                    <span class="distance">3.1 km de distância</span>
-                    <p>Rua dos Pinheiros, 500 - Centro, São Paulo/SP</p>
-                    <p><strong>Tipo:</strong> Clínica</p>
-                    <p><strong>Especialidades:</strong> Cardiologia, Ortopedia</p>
-                    <div class="card-actions">
-                        <button class="action-button details-button">Ver detalhes</button>
-                        <button class="action-button directions-button">Como chegar</button>
-                    </div>
-                </div>
+            <div class="result-card">
+                <div class="photo-placeholder">[Foto da unidade]</div>
             </div>
         </div>
-    </section>
-    
-    <footer>
-        <div class="footer_container">
-            <div class="footer_column">
-                <h4>Sobre</h4>
-                <ul>
-                    <li><a href="#">Quem somos</a></li>
-                    <li><a href="#">Como funciona</a></li>
-                    <li><a href="#">Nossa missão</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer_column">
-                <h4>Para unidades</h4>
-                <ul>
-                    <li><a href="#">Cadastre sua unidade</a></li>
-                    <li><a href="#">Atualizar informações</a></li>
-                    <li><a href="#">Área administrativa</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer_column">
-                <h4>Ajuda</h4>
-                <ul>
-                    <li><a href="#">Perguntas frequentes</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Termos de uso</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer_column">
-                <h4>Parceiros</h4>
-                <ul>
-                    <li><a href="#">Ministério da Saúde</a></li>
-                    <li><a href="#">Secretarias Municipais</a></li>
-                    <li><a href="#">Hospitais Privados</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; Desafio04 - Trilhas
-        </div>
-    </footer>
+    </div>
+
+    <div id="footer"></div>
+    <script src="components/include-header-footer.js"></script>
 </body>
 </html>

@@ -1,0 +1,151 @@
+:root {
+  --verde-escuro: #4b7358;
+  --verde-medio: #e2ede6;
+  --cinza-claro: #f5f6f5;
+  --branco: #fff;
+  --cinza-borda: #b2c6b6;
+  --fonte-principal: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cinza-claro);
+  font-family: var(--fonte-principal);
+  color: #222;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: var(--verde-escuro);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.header .logo img {
+  height: 45px;
+}
+
+.header .menu, .header nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header .menu a, .header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: text-decoration 0.2s;
+}
+
+.header .menu a:hover, .header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: var(--verde-escuro);
+  color: #fff;
+  padding: 32px 0 16px 0;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 180px;
+  margin: 0 24px;
+}
+
+.footer-section h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  color: #d7e2db;
+  font-size: 13px;
+  margin-top: 24px;
+}
+
+/* Links e botões globais */
+a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+.btn {
+  background: var(--verde-escuro);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background: #35543e;
+}
+
+/* Responsividade básica */
+@media (max-width: 900px) {
+  .header, .footer {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+}
