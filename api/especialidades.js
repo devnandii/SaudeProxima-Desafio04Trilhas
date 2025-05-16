@@ -6,6 +6,10 @@ const pool = new Pool({
 });
 
 export default async function handler(req, res) {
+  
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+
   try {
     const { rows } = await pool.query('SELECT id, nome FROM servicos ORDER BY nome');
     res.status(200).json(rows);
