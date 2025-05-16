@@ -101,15 +101,6 @@ npm start
 Acesse: http://localhost:3000/api/unidades
 
 ---
-
-## 📡 Endpoints Principais
-| Método | Endpoint               | Descrição                     |
-|--------|------------------------|-------------------------------|
-| GET    | `/api/unidades`        | Lista todas unidades          |
-| GET    | `/api/unidades/{id}`   | Detalhes de uma unidade       |
-| POST   | `/api/unidades`        | Cadastra nova unidade         |
-| GET    | `/api/proximas?lat=X&lng=Y` | Unidades próximas por coordenadas |
-
 **Exemplo de Requisição**:
 ```bash
 curl http://localhost:3000/api/proximas?lat=-2.523&lng=-44.236
