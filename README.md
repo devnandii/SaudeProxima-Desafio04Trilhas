@@ -1,34 +1,42 @@
++++markdown
+
 # SaúdePróxima 🏥
 
-Sistema para localizar unidades de saúde próximas com filtros por tipo de estabelecimento e especialidade.  
+Sistema para localizar unidades de saúde próximas com filtros por tipo de estabelecimento e especialidade.
 **Stack**: Node.js | PostgreSQL (Neon.tech) | Serverless (Vercel)
 
-![Node.js 18.x](https://img.shields.io/badge/Node.js-18.x-green) ![PostgreSQL 16.x](https://img.shields.io/badge/PostgreSQL-16.x-blue) ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
+![Node.js 18.x](https://img.shields.io/badge/Node.js-18.x-green)
+![PostgreSQL 16.x](https://img.shields.io/badge/PostgreSQL-16.x-blue)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
 
 ---
 
 ## ✨ Funcionalidades
-- **Geolocalização** de unidades de saúde via Google Maps API
-- **Filtros avançados** por:
-  - Tipo (Hospitais, UPAs, Centros de Saúde)
-  - Especialidades médicas
-  - Serviços disponíveis
-- API Serverless com endpoints otimizados
-- Banco de dados relacional escalável ([Neon.tech](https://neon.tech))
+
+* **Geolocalização** de unidades de saúde via Google Maps API
+* **Filtros avançados** por:
+
+  * Tipo (Hospitais, UPAs, Centros de Saúde)
+  * Especialidades médicas
+  * Serviços disponíveis
+* API Serverless com endpoints otimizados
+* Banco de dados relacional escalável ([Neon.tech](https://neon.tech))
 
 ---
 
 ## 🛠️ Arquitetura
-| Camada          | Tecnologias                                                                 |
-|-----------------|-----------------------------------------------------------------------------|
-| **Backend**     | Node.js, Serverless Functions (Vercel)                                      |
-| **Banco de Dados** | PostgreSQL ([Neon.tech](https://neon.tech))                               |
-| **Geolocalização** | Google Maps Geocoding API                                                 |
-| **Infra**       | Vercel (Deploy Automático + Edge Network)                                  |
+
+| Camada             | Tecnologias                                 |
+| ------------------ | ------------------------------------------- |
+| **Backend**        | Node.js, Serverless Functions (Vercel)      |
+| **Banco de Dados** | PostgreSQL ([Neon.tech](https://neon.tech)) |
+| **Geolocalização** | Google Maps Geocoding API                   |
+| **Infra**          | Vercel (Deploy Automático + Edge Network)   |
 
 ---
 
 ## 🏗️ Estrutura do Projeto
+
 ```plaintext
 saude-proxima/
 ├── api/
@@ -45,57 +53,65 @@ saude-proxima/
 │   └── *.html            # Páginas do frontend
 ├── .env                  # Variáveis de ambiente
 ├── vercel.json           # Configuração do Vercel
+```
+
+---
 
 ## 🚀 Configuração Local
 
-1. **Clone o repositório**
-```bash
-git clone https://github.com/seu-usuario/saude-proxima.git
-cd saude-proxima
+1. **Clone o repositório**:
 
-    Instale as dependências
+   ```bash
+   git clone https://github.com/seu-usuario/saude-proxima.git
+   cd saude-proxima
+   ```
 
-bash
+2. **Instale as dependências**:
 
-npm install
+   ```bash
+   npm install
+   ```
 
-    Configure o Neon.tech
+3. **Configure o banco Neon.tech**:
 
-        Crie um banco gratuito em Neon.tech
+   * Crie um banco gratuito em [Neon.tech](https://neon.tech)
+   * Execute o script SQL do arquivo `schema.sql`
+   * Popule as tabelas com dados iniciais
 
-        Execute o script SQL do arquivo schema.sql
+4. **Configure o ambiente**:
 
-        Popule as tabelas com dados iniciais
+   ```bash
+   cp .env.example .env
+   ```
 
-    Configure o ambiente
+   Edite o arquivo `.env` com suas credenciais:
 
-bash
+   ```env
+   # Neon.tech PostgreSQL
+   NEON_DATABASE_URL="postgres://user:password@ep-cool-cloud-123456.us-east-2.aws.neon.tech/dbname"
 
-cp .env.example .env
+   # Google Maps API
+   GOOGLE_MAPS_API_KEY="sua_chave_aqui"
+   ```
 
-Edite o arquivo .env com suas credenciais:
-env
+5. **Inicie o servidor**:
 
-# Neon.tech PostgreSQL
-NEON_DATABASE_URL="postgres://user:password@ep-cool-cloud-123456.us-east-2.aws.neon.tech/dbname"
+   ```bash
+   npx vercel dev
+   ```
 
-# Google Maps API
-GOOGLE_MAPS_API_KEY="sua_chave_aqui"
+   Acesse: [http://localhost:3000](http://localhost:3000)
 
-    Inicie o servidor
+---
 
-bash
+### ✅ Principais ajustes de documentação
 
-npx vercel dev
-
-Acesse: http://localhost:3000
-
-
-### Principais ajustes:
 1. Hierarquia correta de cabeçalhos com `##`
 2. Lista numerada para sequência lógica
-3. Blocos de código específicos por linguagem (`bash`/`env`)
-4. Links clicáveis formatados corretamente
-5. Identação adequada para listas aninhadas
-6. Formatação consistente de arquivos (`` `schema.sql` ``)
+3. Blocos de código específicos por linguagem (`bash`, `env`)
+4. Links clicáveis com sintaxe markdown
+5. Identação correta para listas aninhadas
+6. Formatação consistente para nomes de arquivos (ex: `schema.sql`)
 7. Separação clara entre comandos e explicações
+
++++
