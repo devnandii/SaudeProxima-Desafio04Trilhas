@@ -1,0 +1,115 @@
+:root {
+  --verde-escuro: #4b7358;
+  --verde-medio: #e2ede6;
+  --cinza-claro: #f5f6f5;
+  --branco: #fff;
+  --cinza-borda: #b2c6b6;
+  --fonte-principal: Arial, Helvetica, sans-serif;
+}
+
+main{
+    padding: 50px;
+}
+
+.conteudo_conteiner{
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo{
+    background-color: var(--branco);
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgb(211, 211, 211);
+}
+
+.texto{
+    margin: 45px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.membro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px;
+    margin-left: 50px;
+}
+
+.membro img{
+    width: 140px;
+    box-sizing: border-box;
+}
+
+.membro-card{
+    border: 3px solid var(--cinza-borda);
+    border-radius: 75px;
+    height: auto;
+    width: 60%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.membro-card:hover{
+    width: 62%;
+    height: 140px;
+    box-shadow: 2px 2px 15px rgb(211, 211, 211);
+}
+
+.membro-card-informacoes{
+    margin-left: 40px;
+}
+
+.membro-card-informacoes p{
+    font-size: 18px;
+}
+
+.membro-card-main{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+@media(max-width: 1150px){
+
+    main{
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    .membro{
+        margin-left: 5px;
+    }
+
+    .membro-card{
+        width: 100%;
+        height: 160px;
+    }
+
+    .membro-card:hover{
+    width: 100%;
+    height: 170px;
+    box-shadow: 2px 2px 15px rgb(211, 211, 211);
+    }
+
+    .texto{
+    margin: 45px;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+    .membro-card-main{
+        font-size: 24px;
+    }
+
+    .membro img{
+        width: 160px;
+    }
+}
