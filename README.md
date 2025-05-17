@@ -81,7 +81,7 @@ saude-proxima/
 4. **Configure o ambiente**:
 
    ```bash
-   cp .env.example .env
+   .env
    ```
 
    Edite o arquivo `.env` com suas credenciais:
@@ -97,7 +97,7 @@ saude-proxima/
 5. **Inicie o servidor**:
 
    ```bash
-   npx vercel dev
+   vercel dev
    ```
 
    Acesse: [http://localhost:3000](http://localhost:3000)
