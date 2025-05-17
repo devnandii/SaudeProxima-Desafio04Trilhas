@@ -12,21 +12,29 @@
     <div class="main-container">
         <h1>Encontre unidades de saúde próximas a você</h1>
         <p>Busque UBS de saúde por endereço ou sua localização atual</p>
-        <form>
+        <form id="form-busca">
             <div class="form-group">
-                <label for="endereco">Digite seu endereço</label>
-                <input type="text" id="endereco" placeholder="Ex:  ">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" placeholder="Digite o endereço...">
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo de estabelecimento</label>
                 <select id="tipo">
-                    <option>Todos os tipos</option>
+                    <option value="">Todos os tipos</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="especialidade">Especialidade (opcional)</label>
                 <select id="especialidade">
-                    <option>Qualquer especialidade</option>
+                    <option value="">Qualquer especialidade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="distancia">Distância máxima</label>
+                <select id="distancia">
+                    <option value="5000">5 km</option>
+                    <option value="10000">10 km</option>
+                    <option value="20000">20 km</option>
                 </select>
             </div>
             <button type="submit">Buscar unidades</button>
@@ -42,20 +50,12 @@
             </select>
         </div>
         <div class="results-container">
-            <div class="result-card">
-                <div class="photo-placeholder">[Foto da unidade]</div>
-            </div>
-            <div class="result-card">
-                <div class="photo-placeholder">[Foto da unidade]</div>
-            </div>
-            <div class="result-card">
-                <div class="photo-placeholder">[Foto da unidade]</div>
-            </div>
+            <!-- Resultados serão inseridos aqui pelo JS -->
         </div>
     </div>
 
     <div id="footer"></div>
     <script src="components/include-header-footer.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/home.js" defer></script>
 </body>
 </html>
