@@ -27,6 +27,11 @@ body {
     color: #4b7358;
     margin-bottom: 24px;
 }
+.main-container img{
+    width: 40%;
+    height: 50%;
+    border-radius: 15%;
+}
 
 .form-group {
     margin-bottom: 16px;

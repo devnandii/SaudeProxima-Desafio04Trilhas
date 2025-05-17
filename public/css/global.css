@@ -23,13 +23,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 100px;
   height: 70px;
   box-sizing: border-box;
 }
 
 .header .logo img {
-  height: 45px;
+  width: 100px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 0 90px;
+
 }
 
 .header .menu, .header nav {
