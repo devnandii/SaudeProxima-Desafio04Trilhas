@@ -101,6 +101,7 @@ npm start
 Acesse: http://localhost:3000/api/unidades
 
 ---
+
 **Exemplo de Requisição**:
 ```bash
 curl http://localhost:3000/api/proximas?lat=-2.523&lng=-44.236
