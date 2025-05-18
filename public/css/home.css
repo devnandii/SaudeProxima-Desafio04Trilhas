@@ -160,3 +160,36 @@ button:hover {
   font-size: 0.9em;
 }
 
+@media (max-width: 1000px){
+
+    .main-container{
+        max-width: 89%;    
+    }
+
+    .main-container h1 {
+        font-size: 43px;
+    }
+    .main-container p{
+        font-size: 24px;   
+    }
+
+    input[type="text"], select {
+        height: 50px;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .section-results h2 {
+        font-size: 28px;
+    }
+
+    button{
+        width: 99%;
+        height: 70px;
+        font-size: 26px;
+    }
+
+    .form-group label{
+        font-size: 24px;
+    }
+}
