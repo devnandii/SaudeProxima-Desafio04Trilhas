@@ -1,0 +1,88 @@
+:root {
+  --verde-escuro: #4b7358;
+  --verde-medio: #e2ede6;
+  --cinza-claro: #f5f6f5;
+  --branco: #fff;
+  --cinza-borda: #b2c6b6;
+  --texto: #37474f;
+  --fonte-principal: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2ede6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: var(--verde-escuro);
+    text-align: center;
+}
+
+h2 {
+    margin: 1.5rem 0 1rem;
+    color: var(--verde-escuro);
+    border-bottom: 2px solid var(--verde-escuro);
+    padding-bottom: 0.5rem;
+}
+
+p, ul {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.back-btn {
+    
+    
+   
+    transform: translateY(-50%);
+    color: var(--verde-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: 2px solid var(--verde-escuro);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 1.5rem;
+   
+    position: absolute;
+
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: var(--verde-escuro);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.contact-btn:hover {
+    background-color: #57aa6f;
+}
