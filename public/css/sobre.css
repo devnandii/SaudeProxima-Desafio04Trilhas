@@ -9,6 +9,8 @@
 
 main{
     padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .conteudo_conteiner{
@@ -24,91 +26,98 @@ main{
 }
 
 .texto{
-    margin: 45px;
+    margin: 4rem;
     font-size: 1.125rem;
     font-weight: 400;
+    line-height: 1.6;
+    text-align: justify;
+    
 }
 
 .membro{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
-    margin: 30px;
-    margin-left: 50px;
+    gap: 2rem;
+    margin: 3rem;
+    
 }
 
 .membro img{
     width: 140px;
-    box-sizing: border-box;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .membro-card{
     border: 3px solid var(--cinza-borda);
     border-radius: 75px;
-    height: auto;
-    width: 60%;
-    padding: 5px;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    transition: 0.5s;
+    transition: all 0.3s ease;
 }
 
 .membro-card:hover{
-    width: 62%;
-    height: 140px;
+    transform: scale(1.05);
     box-shadow: 2px 2px 15px rgb(211, 211, 211);
 }
 
 .membro-card-informacoes{
-    margin-left: 40px;
+    margin-left: 1.5rem;
 }
 
 .membro-card-informacoes p{
-    font-size: 18px;
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
 }
 
 .membro-card-main{
-    font-weight: 600;
-    margin-bottom: 12px;
+    font-weight: 600
 }
 
-@media(max-width: 1150px){
-
-    main{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+@media (max-width: 768px) {
+    .membro-card {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 1.5rem;
+        text-align: center;
+        width: 90%;
     }
-
-    .membro{
-        margin-left: 5px;
+    
+    .membro-card-informacoes {
+        margin-left: 0;
+        margin-top: 1rem;
     }
+    
+    .membro img {
+        width: 120px;
+        height: 120px;
+    }
+}
 
-    .membro-card{
+@media (max-width: 480px) {
+    main {
+        padding: 0.5rem;
+    }
+    
+    .texto {
+        margin: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .membro-card {
         width: 100%;
-        height: 160px;
     }
-
-    .membro-card:hover{
-    width: 100%;
-    height: 170px;
-    box-shadow: 2px 2px 15px rgb(211, 211, 211);
+    
+    .membro-card-informacoes p {
+        font-size: 0.9rem;
     }
-
-    .texto{
-    margin: 45px;
-    font-size: 32px;
-    font-weight: 400;
-}
-
-    .membro-card-main{
-        font-size: 24px;
-    }
-
-    .membro img{
-        width: 160px;
+    
+    .membro-card-main p:first-child {
+        font-size: 1.1rem;
     }
 }

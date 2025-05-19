@@ -10,42 +10,50 @@
     <div id="header"></div>
 
     <div class="main-container">
+        
         <div class="imagem-localiza">
             <img src="imagens/img.jpeg" alt="localiza">
         </div>
         
-        <h1>Encontre unidades de saúde próximas a você</h1>
+        <h2>Encontre unidades de saúde próximas a você</h2>
         <p>Busque UBS de saúde por endereço ou sua localização atual</p>
+        
         <form id="form-busca">
-            <div class="form-group">
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" placeholder="Ex: Av. São Luís Rei de França, Olho D'agua, São Luís">
-            </div>
-            <div class="form-group">
-                <label for="tipo">Tipo de estabelecimento</label>
-                <select id="tipo">
-                    <option value="">Todos os tipos</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="especialidade">Especialidade (opcional)</label>
-                <select id="especialidade">
-                    <option value="">Qualquer especialidade</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="distancia">Distância máxima</label>
-                <select id="distancia">
-                    <option value="5000">5 km</option>
-                    <option value="10000">10 km</option>
-                    <option value="20000">20 km</option>
-                </select>
-            </div>
+            
+            <fieldset>
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" placeholder="Ex: Av. São Luís Rei de França, Olho D'agua, São Luís">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de estabelecimento</label>
+                    <select id="tipo">
+                        <option value="">Todos os tipos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="especialidade">Especialidade (opcional)</label>
+                    <select id="especialidade">
+                        <option value="">Qualquer especialidade</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="distancia">Distância máxima</label>
+                    <select id="distancia">
+                        <option value="5000">5 km</option>
+                        <option value="10000">10 km</option>
+                        <option value="20000">20 km</option>
+                    </select>
+                </div>
+            </fieldset>
+
             <button type="submit">Buscar unidades</button>
+
         </form>
     </div>
 
-    <div class="section-results">
+    
+   <div class="section-results">
         <h2>Unidades de saúde próximas</h2>
         <div class="order-by">
             <label for="ordenar">Ordenar por:</label>
