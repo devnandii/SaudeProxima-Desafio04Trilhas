@@ -1,6 +1,6 @@
 +++markdown
 
-# SaúdePróxima 🏥
+# UBS Local🏥
 
 Sistema para localizar unidades de saúde próximas com filtros por tipo de estabelecimento e especialidade.
 **Stack**: Node.js | PostgreSQL (Neon.tech) | Serverless (Vercel)
